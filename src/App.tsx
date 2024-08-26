@@ -1,9 +1,48 @@
 import Alert from "./components/ui/Alert/Alert";
+import { AlertTriangle, Ban, Bell, CheckCheck, Info } from "lucide-react";
 
 function App() {
   return (
     <>
-      <Alert />
+      <Alert
+        type={"alert-default"}
+        icon={<Bell size={20} />}
+        title={"Upgrade your plan"}
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur temporibus doloremque praesentium
+        laboriosam iste totam officiis beatae sint non quas."
+      ></Alert>
+
+      <Alert
+        type={"alert-info"}
+        icon={<Info size={20} />}
+        title={"Note"}
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur temporibus doloremque praesentium
+        laboriosam iste totam officiis beatae sint non quas."
+      />
+
+      <Alert
+        type={"alert-success"}
+        icon={<CheckCheck size={20} />}
+        title={"Your order has been processed"}
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur temporibus doloremque praesentium
+        laboriosam iste totam officiis beatae sint non quas."
+      />
+
+      <Alert
+        type={"alert-error"}
+        icon={<Ban size={20} />}
+        title={"Something went wrong"}
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur temporibus doloremque praesentium
+        laboriosam iste totam officiis beatae sint non quas."
+      />
+
+      <Alert
+        type={"alert-warning"}
+        icon={<AlertTriangle size={20} />}
+        title={"Tips & Tricks"}
+        description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur temporibus doloremque praesentium
+        laboriosam iste totam officiis beatae sint non quas."
+      />
     </>
   );
 }

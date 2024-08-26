@@ -1,28 +1,29 @@
+import { ReactNode } from "react";
 import "./index.scss";
-import { BellRing, X } from "lucide-react";
+import { X } from "lucide-react";
+import { AlertTypes } from "../../../types";
 
-interface IPropos {}
+interface IPropos {
+  type: AlertTypes;
+  icon: ReactNode;
+  title: string;
+  description?: string;
+  children?: ReactNode;
+}
 
-const Alert = ({}: IPropos) => {
+const Alert = ({ type, icon, title, description, children }: IPropos) => {
   return (
-    <div className="alert-danger">
+    <div className={type}>
       <div className="alert-header">
         <div className="title">
-          <span>
-            <BellRing />
-          </span>
+          <span>{icon}</span>
 
-          <h4>Alert Title</h4>
+          <h4>{title}</h4>
         </div>
 
-        <X className="close" size={25} />
+        <X className="close" size={20} />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-        explicabo eveniet asperiores, dolorem possimus tempore veniam officiis.
-        Ad, cupiditate fugiat? Corrupti, numquam beatae doloribus adipisci
-        repellendus odit dolore non labore.
-      </p>
+      {children ? children : <p>{description}</p>}
     </div>
   );
 };
