@@ -1,0 +1,38 @@
+//Error
+$borderxColor: rgba(255,25,0,0.322);
+$errorBg: rgb(192 29 29 / 15%);
+$errorColor: #ef8d8dfa;
+
+.alert-danger{
+    border: 2px dotted $borderxColor;
+    border-radius: 0.8rem;
+    padding: 1.3rem;
+    background-color: $errorBg;
+    color: $errorColor;
+
+    .alert-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title{
+            display: flex;
+            align-items: center;
+        }
+
+       span svg{
+            margin-right: 0.6rem;
+        }
+
+        .close{
+            cursor: pointer;
+        }
+    }
+
+    .p{
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.5rem;
+      margin-top: 1.2rem;
+    }
+}
